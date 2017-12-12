@@ -1,5 +1,5 @@
 #build
- sudo ./build.sh
+$./build.sh
 
 #Start 
-dr run -d -i -t -p 10001:10001 --volume $(pwd)/tonido-data/:/data azsoftalanzheng/rpi-tonido
+$docker run -d -i -t -p 10001:10001 --volume $(pwd)/tonido-data/:/root azsoftalanzheng/rpi-tonido

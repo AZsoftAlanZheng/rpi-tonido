@@ -13,21 +13,9 @@ RUN mkdir /usr/local/tonido && wget -q -O - http://patch.codelathe.com/tonido/li
 ##UNCOMMENT AND CHANGE THIS TO YOUR PASSWORD IF YOU WANT
 #RUN echo 'root:<yourpasswordhere>' | chpasswd
 
-#RUN ap-get install -yqq ffmpeg
-#RUN ln -s /usr/bin/ffmpeg ffmpeg.exe
-#RUN ln -s /usr/bin/ffmpeg ffmpegv.exe
-
-#ADD tonido /etc/init.d/
-#RUN chmod +x /etc/init.d/tonido
-#RUN update-rc.d tonido defaults
-
-RUN mkdir /data
-VOLUME ["/data"]
+VOLUME ["/root"]
 WORKDIR /usb/local/tonido
 
 EXPOSE 10001
 
-#ADD start.sh /
-#RUN chmod +x /start.sh
-#CMD ["/start.sh"]
 CMD /usr/local/tonido/tonido.sh start && /bin/bash
